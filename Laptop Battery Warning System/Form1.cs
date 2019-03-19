@@ -27,7 +27,7 @@ namespace Laptop_Battery_Warning_System
             };
 
             // Display for 20 seconds
-            notification.ShowBalloonTip(20000);
+            notification.ShowBalloonTip(20 * 1000);
 
             notification.Dispose();
         }
@@ -50,13 +50,26 @@ namespace Laptop_Battery_Warning_System
                 double bt = double.Parse(batterylife);
                 bt *= 100;
 
-                if ((bt >= 90 && batterystatus.Equals("Charging")) || (bt <= 35 && batterystatus.Equals("Charging") == false))
+                if ((bt >= 90 && pwr.PowerLineStatus == PowerLineStatus.Online) || (bt <= 35 && pwr.PowerLineStatus == PowerLineStatus.Offline == false))
                 {
                     showNotification(batterystatus, bt);
 
                     MessageBox.Show($"Battery Status is {batterystatus}, and currently the battery is at {bt}%");
                 }
-                Thread.Sleep(2 * 60 * 1000);
+
+                //gets time in minutes
+                sleepWithoutFreezingUI(2); // will sleep Approximately till that time limit
+            }
+        }
+
+        private void sleepWithoutFreezingUI(int minutes)
+        {
+            int end = (minutes * 60) * 4;
+
+            for (int i = 0; i < end; i++)
+            {
+                Thread.Sleep(220); // leaving 30ms after each 250ms for DoEvents()
+                Application.DoEvents();
             }
         }
 
