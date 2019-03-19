@@ -66,7 +66,7 @@ namespace Laptop_Battery_Warning_System
                 BalloonTipText = $"Your batter percentage is {percentage}%\nPlease take suitable action for healthier battery life !!",
             };
 
-            // Display for 20 seconds.
+            // Display for 20 seconds
             notification.ShowBalloonTip(20000);
             
             notification.Dispose();
