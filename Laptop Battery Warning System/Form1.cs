@@ -72,9 +72,5 @@ namespace Laptop_Battery_Warning_System
                 Application.DoEvents();
             }
         }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
     }
 }
