@@ -54,7 +54,7 @@ namespace Laptop_Battery_Warning_System
                 {
                     showNotification(batterystatus, bt);
 
-                    MessageBox.Show($"Battery Status is {batterystatus}, and currently the battery is at {bt}%");
+                    MessageBox.Show($"Battery Status is {batterystatus}, and currently the battery is at {bt}%", "Zaki Battery Warning App", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 //gets time in minutes
