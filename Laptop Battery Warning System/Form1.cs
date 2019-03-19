@@ -54,11 +54,11 @@ namespace Laptop_Battery_Warning_System
                     double bt = double.Parse(batterylife);
                     bt *= 100;
 
-                    if (bt >= 90 || bt <= 35)
+                    if ((bt >= 90 && batterystatus.Equals("Charging")) || (bt <= 35 && batterystatus.Equals("Charging") == false))
                     {
                         showNotification(batterystatus, bt);
 
-                        MessageBox.Show($"Battery Status is ");
+                        MessageBox.Show($"Battery Status is {batterystatus}, and currently the battery is at {bt}%");
                     }
                     Thread.Sleep(2000);
                 }
