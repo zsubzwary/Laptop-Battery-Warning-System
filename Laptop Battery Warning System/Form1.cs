@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Laptop_Battery_Warning_System
@@ -16,7 +9,6 @@ namespace Laptop_Battery_Warning_System
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,7 +22,6 @@ namespace Laptop_Battery_Warning_System
                     PowerStatus pwr = SystemInformation.PowerStatus;
                     batterystatus = SystemInformation.PowerStatus.BatteryChargeStatus.ToString();
 
-
                     String batterylife;
                     batterylife = SystemInformation.PowerStatus.BatteryLifePercent.ToString();
 
@@ -39,21 +30,13 @@ namespace Laptop_Battery_Warning_System
 
                     if (bt >= 90 || bt <= 35)
                     {
-
                         showNotification(batterystatus, bt);
 
                         MessageBox.Show("Battery charge status : " + batterystatus + " - life" + batterylife);
-
-                    } 
+                    }
                 }
             }).Start();
-
-
-
-
-
         }
-
 
         private void showNotification(String status, double percentage)
         {
@@ -68,7 +51,7 @@ namespace Laptop_Battery_Warning_System
 
             // Display for 20 seconds
             notification.ShowBalloonTip(20000);
-            
+
             notification.Dispose();
         }
 
