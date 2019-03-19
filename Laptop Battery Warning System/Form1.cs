@@ -50,7 +50,7 @@ namespace Laptop_Battery_Warning_System
                 double bt = double.Parse(batterylife);
                 bt *= 100;
 
-                if ((bt >= 90 && pwr.PowerLineStatus == PowerLineStatus.Online) || (bt <= 35 && pwr.PowerLineStatus == PowerLineStatus.Offline == false))
+                if ((bt >= 90 && pwr.PowerLineStatus == PowerLineStatus.Online) || (bt <= 35 && pwr.PowerLineStatus == PowerLineStatus.Offline))
                 {
                     showNotification(batterystatus, bt);
 
