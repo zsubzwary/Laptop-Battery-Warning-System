@@ -6,8 +6,6 @@ namespace Laptop_Battery_Warning_System
 {
     public partial class Form1 : Form
     {
-        private Thread thread;
-
         public Form1()
         {
             InitializeComponent();
@@ -39,36 +37,31 @@ namespace Laptop_Battery_Warning_System
             this.Visible = false;
             this.Hide();
 
-            thread = new Thread(() =>
+            while (true)
             {
-                while (true)
+                String batterystatus;
+
+                PowerStatus pwr = SystemInformation.PowerStatus;
+                batterystatus = SystemInformation.PowerStatus.BatteryChargeStatus.ToString();
+
+                String batterylife;
+                batterylife = SystemInformation.PowerStatus.BatteryLifePercent.ToString();
+
+                double bt = double.Parse(batterylife);
+                bt *= 100;
+
+                if ((bt >= 90 && batterystatus.Equals("Charging")) || (bt <= 35 && batterystatus.Equals("Charging") == false))
                 {
-                    String batterystatus;
+                    showNotification(batterystatus, bt);
 
-                    PowerStatus pwr = SystemInformation.PowerStatus;
-                    batterystatus = SystemInformation.PowerStatus.BatteryChargeStatus.ToString();
-
-                    String batterylife;
-                    batterylife = SystemInformation.PowerStatus.BatteryLifePercent.ToString();
-
-                    double bt = double.Parse(batterylife);
-                    bt *= 100;
-
-                    if ((bt >= 90 && batterystatus.Equals("Charging")) || (bt <= 35 && batterystatus.Equals("Charging") == false))
-                    {
-                        showNotification(batterystatus, bt);
-
-                        MessageBox.Show($"Battery Status is {batterystatus}, and currently the battery is at {bt}%");
-                    }
-                    Thread.Sleep(2000);
+                    MessageBox.Show($"Battery Status is {batterystatus}, and currently the battery is at {bt}%");
                 }
-            });
-            thread.Start();
+                Thread.Sleep(2 * 60 * 1000);
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            thread.Abort();
         }
     }
 }
