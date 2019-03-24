@@ -8,7 +8,7 @@ This program has a minimum memory footprint and is malware free, _(you can confi
 
 Some statistics: 
 
-![GitHub language count](https://img.shields.io/github/languages/count/zsubzwary/Laptop-Battery-Warning-System.svg?label=Languages%20Used%20to%20Make%20this%20app&style=for-the-badge) ![GitHub search hit counter](https://img.shields.io/github/search/zsubzwary/Laptop-Battery-Warning-System/laptop battery warning.svg?label=Searched%20for%20on%20Google&style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues-raw/zsubzwary/Laptop-Battery-Warning-System.svg?style=for-the-badge) 
+![GitHub language count](https://img.shields.io/github/languages/count/zsubzwary/Laptop-Battery-Warning-System.svg?label=Languages%20Used%20to%20Make%20this%20app&style=for-the-badge)  ![GitHub issues](https://img.shields.io/github/issues-raw/zsubzwary/Laptop-Battery-Warning-System.svg?style=for-the-badge) 
 
 ![GitHub release](https://img.shields.io/github/release-pre/zsubzwary/Laptop-Battery-Warning-System.svg?label=Pre-Release&style=for-the-badge) ![GitHub release](https://img.shields.io/github/release/zsubzwary/Laptop-Battery-Warning-System.svg?label=Stable-Release&style=for-the-badge) 
 
