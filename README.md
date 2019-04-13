@@ -6,6 +6,18 @@ This program has a minimum memory footprint and is malware free, _(you can confi
 
 ---
 
+## [Download Now](https://github.com/zsubzwary/Laptop-Battery-Warning-System/releases)
+
+## Usage
+
+1. Press on `Win + R`  _(this will open up the RUN dialog box)_ 
+2. Then type `shell:startup` in it _(this will open up the “startup” folder)_ 
+3. Paste the downloaded EXE _(executable)_ file in there so that it automatically runs each time your Computer boots _(so you don’t have to do anything)_.
+
+
+
+---
+
 Some statistics: 
 
 ![GitHub language count](https://img.shields.io/github/languages/count/zsubzwary/Laptop-Battery-Warning-System.svg?label=Languages%20Used%20to%20Make%20this%20app&style=for-the-badge)  ![GitHub issues](https://img.shields.io/github/issues-raw/zsubzwary/Laptop-Battery-Warning-System.svg?style=for-the-badge) 
